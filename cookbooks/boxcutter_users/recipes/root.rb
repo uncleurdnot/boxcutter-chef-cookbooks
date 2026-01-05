@@ -18,7 +18,7 @@
 
 user 'root' do
   password lazy {
-    Boxcutter::OnePassword.op_read('op://Automation-Org/root/hash')
+    Boxcutter::OnePassword.op_read('op://HomeLab/root/hash')
   }
   shell '/bin/bash'
   comment 'root'
