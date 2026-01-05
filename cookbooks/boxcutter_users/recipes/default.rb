@@ -17,8 +17,7 @@
 # limitations under the License.
 
 caretakers = {
-  'sheila' => '2002',
-  'taylor' => '2003',
+  'quentin' => '1000',
 }
 
 caretakers.each do |user, uid|
@@ -51,10 +50,10 @@ node.default['fb_sudo']['users']['%sudo']['dont prompt for password'] = 'ALL=(AL
 
 node.default['fb_ssh']['enable_central_authorized_keys'] = true
 
-node.default['fb_ssh']['authorized_keys']['taylor']['mahowald'] =
-  'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINRK4hkcpUiaSkiLEytgwMYcKylBioXPLx1TnwJFrLPl mahowald'
-node.default['fb_ssh']['authorized_keys']['taylor']['sheila'] =
-  'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEWerEkujoB7ipGnWJwnPGFu3DuUQJtc1zB6YqjGRziE sheila'
+node.default['fb_ssh']['authorized_keys']['quentin']['mahowald'] =
+  'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMgXht3n2pNj3pUmItA2vELbbps3ihhcIWduPsyGkIBx quentin # ssh-import-id gh:uncleurdnot
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILDiYSjblMdUJfa1xdIUieELacBnP1q1MzRpM3wapWtT quentin # ssh-import-id gh:uncleurdnot
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOr/EvpBfAHW6jw8xFyiHx0HOcmIHBjBhKq6sYmIGRWf quentin # ssh-import-id gh:uncleurdnot'
 
 # If we're running in test kitchen on digitalocean, make sure ssh keys for
 # root aren't nuked so that "kitchen login" works after the first
@@ -64,7 +63,7 @@ if kitchen? && digital_ocean?
   node.default['fb_ssh']['sshd_config']['X11Forwarding'] = true
   node.default['fb_sudo']['users']['root']['sudo'] = 'ALL=(ALL:ALL) NOPASSWD:ALL'
   node.default['fb_ssh']['authorized_keys']['root']['mahowald'] =
-    'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINRK4hkcpUiaSkiLEytgwMYcKylBioXPLx1TnwJFrLPl mahowald'
-  node.default['fb_ssh']['authorized_keys']['root']['sheila'] =
-    'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEWerEkujoB7ipGnWJwnPGFu3DuUQJtc1zB6YqjGRziE sheila'
+    'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMgXht3n2pNj3pUmItA2vELbbps3ihhcIWduPsyGkIBx quentin # ssh-import-id gh:uncleurdnot
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILDiYSjblMdUJfa1xdIUieELacBnP1q1MzRpM3wapWtT quentin # ssh-import-id gh:uncleurdnot
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOr/EvpBfAHW6jw8xFyiHx0HOcmIHBjBhKq6sYmIGRWf quentin # ssh-import-id gh:uncleurdnot'
 end
