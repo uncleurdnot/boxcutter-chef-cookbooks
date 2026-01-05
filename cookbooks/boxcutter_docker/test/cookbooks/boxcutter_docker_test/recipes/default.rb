@@ -17,7 +17,7 @@ node.default['fb_users']['users'][docker_user] = {
 }
 
 node.default['fb_users']['groups']['docker']['members'] << 'boxcutter'
-node.default['fb_users']['groups']['docker']['members'] << 'taylor'
+node.default['fb_users']['groups']['docker']['members'] << 'quentin'
 
 node.default['boxcutter_docker']['volumes']['prometheus_data'] = {}
 

@@ -71,14 +71,11 @@ module FB
       'redis' => {
         'uid' => 702,
       },
+      'quentin' => {
+        'uid' => 1000,
+      }
       'boxcutter' => {
         'uid' => 2001,
-      },
-      'sheila' => {
-        'uid' => 2002,
-      },
-      'taylor' => {
-        'uid' => 2003,
       },
       'opuser' => {
         'uid' => 8010,
@@ -163,14 +160,11 @@ module FB
       'redis' => {
         'gid' => 702,
       },
+      'quentin' => {
+        'gid' => 1000
+      },
       'boxcutter' => {
         'gid' => 2001,
-      },
-      'sheila' => {
-        'gid' => 2002,
-      },
-      'taylor' => {
-        'gid' => 2003,
       },
       'opuser' => {
         'gid' => 8010,
