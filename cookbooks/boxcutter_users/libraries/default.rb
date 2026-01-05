@@ -73,7 +73,7 @@ module FB
       },
       'quentin' => {
         'uid' => 1000,
-      }
+      },
       'boxcutter' => {
         'uid' => 2001,
       },
